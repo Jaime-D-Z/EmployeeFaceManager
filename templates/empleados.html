@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Empleados Registrados</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="p-5">
+
+  <div class="container">
+    <h2 class="mb-4 text-center">Lista de Empleados Registrados</h2>
+
+    <table class="table table-striped table-hover align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Foto</th>
+          <th>Nombre</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for e in empleados %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td><img src="{{ e.image_path }}" alt="{{ e.name }}" width="80" class="rounded"></td>
+          <td>{{ e.name }}</td>
+          <td>{{ e.email }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="text-center mt-4">
+      <a href="/" class="btn btn-secondary">Volver al Inicio</a>
+    </div>
+  </div>
+
+</body>
+</html>
